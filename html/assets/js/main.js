@@ -4,8 +4,7 @@ var hardcodejson ={"indId":"IN212121","title":"Mr","fullName":"NEOH Test","chine
 
 $(document).ready(function(){
 	//hksi code
-	var meminfo = getmeminfo();
-	updateformvalue(meminfo);
+	getmeminfo();
 	//flips code
 	init();
 	$("nav.main-nav ul li a").on("click", function(e){
@@ -36,12 +35,12 @@ function updateformvalue(meminfo){
 	console.log(meminfo.surname);
 }
 
-async function getmeminfo(){
+function getmeminfo(){
 	// init api params 
 	var indId = getParameter("indId");
 	var token = getParameter("token");
 	console.log(indId,token);
-	var meminfoapi = 'http://13.229.11.198:8080/mis-open-api/api/mem_info?indId='+indId+'&token='+token;
+	var meminfoapi = 'https://uat7.hksi.org/mis-open-api/api/mem_info?indId='+indId+'&token='+token;
     $.ajax
     ({
         dataType: "json",
@@ -49,10 +48,10 @@ async function getmeminfo(){
         success: function(data)
         {
             console.log(data);
-			return data;
+			updateformvalue(data);
         }
     });
-	//return hardcodejson;	
+	//return hardcodejson;
 }
 
 function init(){
