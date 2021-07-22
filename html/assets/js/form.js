@@ -97,7 +97,7 @@ $(document).ready(function(){
 			container.find(".qual-item").show();
 		}
 
-		item.hide();
+		item.show();
 		var elm = container.find(".qual-item-edit").first();
 		var details = elm.clone();
 		item.after(details);

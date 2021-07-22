@@ -106,17 +106,22 @@ function showMemberType(fs){
 	var q3 = $("form input[name=q3]:checked").val() == "true";
 
 	$(fs).find(".mem-type").hide();
+	$(fs).find(".MA_only").hide();
 	$(fs).find(".price-group").hide();
-	
+	$(document).find(".U_only").hide();
+	$(document).find(".MA_only").hide();
 	if(q1 && q2){
 		$(fs).find("#M_apply").show();
 		$(fs).find("#M_price").show();
+		$(document).find(".MA_only").show();
 	} else if(!q1 && q3){
 		$(fs).find("#U_apply").show();
 		$(fs).find("#U_price").show();
+		$(document).find(".U_only").show();
 	} else {
 		$(fs).find("#A_apply").show();
 		$(fs).find("#A_price").show();
+		$(document).find(".MA_only").show();
 	}
 	
 }

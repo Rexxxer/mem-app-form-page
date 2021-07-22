@@ -355,9 +355,9 @@
 										<div class="error-msg" for="PreferredAddress"><span></span></div>
 									</div>
 									<select id="PreferredAddress" name="PreferredAddress" class="form-control" required="required">
-										<option value="Residential">Residential</option>
-										<option value="Office">Office</option>
-										<option value="Secretary/Personal Assistant">Secretary/Personal Assistant</option>
+										<option value="Personal">Personal</option>
+										<option class="MA_only" value="Office">Office</option>
+										<option class="U_only" value="UniversityEmail">University Email</option>
 									</select>
 									<span class="indicator"></span>
 								</div>
@@ -369,6 +369,23 @@
 									<input type="email" id="Email" name="Email" class="form-control" value="" required="required">
 									<span class="indicator"></span>
 								</div>
+								<div class="form-group form-group-default MA_only">
+									<div class="form-label">
+										<label for="OfficeEmail">Office Email Address</label>
+										<div class="error-msg" for="OfficeEmail"><span></span></div>
+									</div>
+									<input type="email" id="OfficeEmail" name="OfficeEmail" placeholder="" class="form-control" value="" />
+									<span class="indicator"></span>
+								</div>
+								<div class="form-group form-group-default required U_only">
+									<div class="form-label">
+										<label for="UniversityEmail">UniversityEmail</label>
+										<div class="error-msg" for="Email"><span></span></div>
+									</div>
+									<input type="email" id="UniversityEmail" name="UniversityEmail" placeholder="" class="form-control" value="" required="required"/>
+									<span class="indicator"></span>
+								</div>
+								<!--
 								<div class="form-group additional">Add Office and Secretary Email Address</div>
 								<div class="additional-fields">
 									<div class="form-group form-group-default">
@@ -387,7 +404,7 @@
 										<input type="email" id="SecretaryEmail" name="SecretaryEmail" placeholder="" class="form-control" value="" />
 										<span class="indicator"></span>
 									</div>
-								</div>
+								</div>-->
 								<div class="form-group form-group-default form-select">
 									<div class="form-label">
 										<label for="PreferredAddress">Preferred Phone</label>
@@ -395,8 +412,8 @@
 									</div>
 									<select id="PreferredPhone" name="PreferredPhone" class="form-control">
 										<option value="Personal">Personal</option>
-										<option value="Office">Office</option>
-										<option value="Secretary/Personal Assistant">Secretary/Personal Assistant</option>
+										<option class="MA_only" value="Office">Office</option>
+										<option class="MA_only" value="Secretary/Personal Assistant">Secretary/Personal Assistant</option>
 									</select>
 									<span class="indicator"></span>
 								</div>
@@ -648,9 +665,9 @@
 										</div>
 									</div>
 								</div>
-								<div class="form-group additional">Add Office / Secretary Phone Number</div>
+								<div class="form-group additional MA_only">Add Office / Secretary Phone Number</div>
 								<div class="additional-fields">
-									<div class="form-group form-group-default form-select">
+									<div class="form-group form-group-default form-select MA_only">
 										<div class="form-label">
 											<label for="OfficeTel">Office Tel</label>
 											<div class="error-msg" for="OfficeTel"><span></span></div>
@@ -898,7 +915,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="form-group form-group-default form-select">
+									<div class="form-group form-group-default form-select MA_only">
 										<div class="form-label">
 											<label for="SecretaryPhone">Secretary Phone</label>
 											<div class="error-msg" for="SecretaryPhone"><span></span></div>
@@ -1193,7 +1210,7 @@
 				<div class="one-column sty2">
 					<div class="container">
 						<h1 class="step-name hidden-md-up">My Credentials</h1>
-						<div class="part">
+						<div class="part MA_only">
 							<div class="part-head">
 								<h3>Regulatory License / Registration</h3>
 							</div>
@@ -1293,55 +1310,78 @@
 								<h3>Education Qualification</h3>
 							</div>
 							<div class="details">
+								<!--
 								<div class="qual-item" data-id="1">
+									
 									<div>
 										<div class="date"><span>04.2017</span> — <span>Present</span></div>
 										<h2>University of Oregon</h2>
 										<p>Master of Economics in Finance</p>
 									</div>
+									
 									<div class="actions">
 										<a href="#" class="btn-edit"><i class="fas fa-pencil-alt"></i></a>
-									</div>
+									</div> 
+									
 								</div>
+								-->
 								<div class="qual-item-edit">
 									<div>
 										<!-- if edu_id have not value -> add new, else edit existing -->
 										<input type="hidden" id="edu_id" name="edu_id" value="1" />
 										<div class="row">
-											<div class="col-sm-6">
+											<div class="col-sm-6 U_only">
 												<div class="form-group form-group-default">
 													<div class="form-label">
-														<label for="edu_date_from">Date From</label>
+														<label for="edu_date_from">Admission Date</label>
 														<div class="error-msg" for="edu_date_from"><span></span></div>
 													</div>
-													<input type="text" id="edu_date_from" name="edu_date_from" placeholder="MM-YYYY" class="form-control input-datepicker input-monthpicker" value="04-2016">
+													<input type="text" id="edu_date_from" name="edu_date_from" placeholder="MM-YYYY" class="form-control input-datepicker input-monthpicker" value="">
 												</div>
 											</div>
-											<div class="col-sm-6">
+											<div class="col-sm-6 U_only">
 												<div class="form-group form-group-default">
 													<div class="form-label">
-														<label for="edu_date_to">Date To</label>
+														<label for="edu_date_to">Expected Graduation Date</label>
 														<div class="error-msg" for="edu_date_to"><span></span></div>
 													</div>
-													<input type="text" id="edu_date_to" name="edu_date_to" placeholder="MM-YYYY" class="form-control input-datepicker input-monthpicker" value="04-2017">
+													<input type="text" id="edu_date_to" name="edu_date_to" placeholder="MM-YYYY" class="form-control input-datepicker input-monthpicker" value="">
+												</div>
+											</div>
+											<div class="col-sm-6 MA_only">
+												<div class="form-group form-group-default">
+													<div class="form-label">
+														<label for="edu_date_to">Award Date</label>
+														<div class="error-msg" for="edu_date_to"><span></span></div>
+													</div>
+													<input type="text" id="edu_award_date" name="edu_award_date" placeholder="MM-YYYY" class="form-control input-datepicker input-monthpicker" value="">
 												</div>
 											</div>
 											<div class="col-sm-12">
 												<div class="form-group form-group-default">
 													<div class="form-label">
-														<label for="edu_instituteOrIssuingAuthority">Issuing Authority</label>
+														<label for="edu_instituteOrIssuingAuthority">Education Authority</label>
 														<div class="error-msg" for="edu_instituteOrIssuingAuthority"><span></span></div>
 													</div>
-													<input type="text" id="edu_instituteOrIssuingAuthority" name="edu_instituteOrIssuingAuthority" placeholder="Please input full name" class="form-control" value="University of Oregon">
+													<input type="text" id="edu_instituteOrIssuingAuthority" name="edu_instituteOrIssuingAuthority" placeholder="University of Oregon" class="form-control" value="">
 												</div>
 											</div>
-											<div class="col-sm-12">
+											<div class="col-sm-12 MA_only">
 												<div class="form-group form-group-default">
 													<div class="form-label">
 														<label for="edu_qualification">Qualification</label>
 														<div class="error-msg" for="edu_qualification"><span></span></div>
 													</div>
-													<input type="text" id="edu_qualification" name="edu_qualification" placeholder="Please input full name" class="form-control" value="Master of Economics in Finance">
+													<input type="text" id="edu_qualification" name="edu_qualification" placeholder="Master of Economics in Finance" class="form-control" value="">
+												</div>
+											</div>
+											<div class="col-sm-12 U_only">
+												<div class="form-group form-group-default">
+													<div class="form-label">
+														<label for="edu_programme">Programme</label>
+														<div class="error-msg" for="edu_programme"><span></span></div>
+													</div>
+													<input type="text" id="edu_programme" name="edu_programme" placeholder="Master of Economics in Finance" class="form-control" value="">
 												</div>
 											</div>
 											<div class="col-sm-12">
@@ -1351,7 +1391,7 @@
 														<div class="error-msg" for="edu_cert"><span></span></div>
 													</div>
 													<span class="upload-label"><span>Upload Certificate</span><span class="filename"></span></span>
-													<input accept=".doc,.docx,.pdf" id="edu_cert" name="edu_cert" type="file" required="required" />
+													<input accept=".doc,.docx,.pdf,.jpeg,.jpg" id="edu_cert" name="edu_cert" type="file" required="required" />
 													<a href="#" class="btn-cancel">
 														<i class="fas fa-times"></i>
 													</a>
@@ -1374,7 +1414,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="part employment">
+						<div class="part employment MA_only">
 							<div class="part-head">
 								<h3>Employment History</h3>
 							</div>
@@ -1459,7 +1499,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="part">
+						<div class="part MA_only">
 							<div class="part-head">
 								<h3>Professional Qualification</h3>
 							</div>
@@ -1535,7 +1575,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="part">
+						<div class="part MA_only">
 							<div class="part-head">
 								<h3>Professional Membership</h3>
 							</div>
@@ -1737,7 +1777,7 @@
 											<label for="discipline_att">Please attach supporting document, such as court judgment, decision of disciplinary panels, etc. Please zip your files for upload of multiple files.</label>
 										</div>
 										<span class="upload-label"><span>Upload Attachment</span><span class="filename"></span></span>
-										<input accept=".doc,.docx,.pdf,.zip" id="discipline_att" name="discipline_att" type="file" />
+										<input accept=".doc,.docx,.pdf,.zip,.jpg,.jpeg" id="discipline_att" name="discipline_att" type="file" />
 										<a href="#" class="btn-cancel">
 											<i class="fas fa-times"></i>
 										</a>
