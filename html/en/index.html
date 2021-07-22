@@ -38,14 +38,14 @@
 		<div class="main-nav-outer">
 			<a href="#" class="logo"><img src="../assets/img/common/logo.svg" alt="logo" /></a>
 			<ul class="steps">
-				<li data-step="0" class="active"><a href="./?fs=0">Preliminary</a></li>
-				<li data-step="3"><a href="./?fs=3">My Profile</a></li>
-				<li data-step="4"><a href="./?fs=4">My Credentials</a></li>
-				<li data-step="5"><a href="./?fs=5">Questionnaire</a></li>
-				<li data-step="6"><a href="./?fs=6">T&C</a></li>
-				<li data-step="7"><a href="./?fs=7">Review</a></li>
-				<li data-step="8"><a href="./?fs=8">Confirmation</a></li>
-				<li data-step="9"><a href="./?fs=9">Thank You</a></li>
+				<li data-step="0" class="active"><a>Preliminary</a></li>
+				<li data-step="3">My Profile</li>
+				<li data-step="4">My Credentials</li>
+				<li data-step="5">Questionnaire</li>
+				<li data-step="6">T&amp;C</li>
+				<li data-step="7">Review</li>
+				<li data-step="8">Confirmation</li>
+				<li data-step="9">Thank You</li>
 			</ul>
 			<div class="nav-btn-group">
 				<a href="#" class="btn btn-outline btn-prev">Previous</a>
@@ -204,9 +204,16 @@
 										<h2>CV</h2>
 										<p>Graduation Certification</p>
 									</div>-->
-									<div class="price-group">
-										<h2>Joining Fee: <span class="price">$600</span></h2>
+									<div id="M_price" class="price-group">
+										<h2>Joining Fee: <span class="price">300</span></h2>
 										<h2>Annual Fee: <span class="price">$1,200</span></h2>
+									</div>
+									<div id="A_price" class="price-group">
+										<h2>Joining Fee: <span class="price">$300</span></h2>
+										<h2>Annual Fee: <span class="price">$600</span></h2>
+									</div>
+									<div id="U_price" class="price-group">
+										<h2>Annual Fee: <span class="price">$300</span></h2>
 									</div>
 								</div>
 							</div>
@@ -296,6 +303,14 @@
 									<input type="text" id="GivenNameChi" name="GivenNameChi" placeholder="same as HKID card or travel document"  class="form-control" value="" />
 									<span class="indicator"></span>
 								</div>
+								<div class="form-group form-group-default">
+									<div class="form-label">
+										<label for="PreferedName">PreferedName</label>
+										<div class="error-msg" for="PreferedName"><span></span></div>
+									</div>
+									<input type="text" id="PreferedName" name="PreferedName" placeholder=""  class="form-control" value="" />
+									<span class="indicator"></span>
+								</div>
 								<div class="form-group form-group-default form-select required">
 									<div class="form-label">
 										<label for="Sex">Sex</label>
@@ -351,7 +366,7 @@
 										<label for="Email">Personal Email Address</label>
 										<div class="error-msg" for="Email"><span></span></div>
 									</div>
-									<input type="email" id="Email" name="Email" class="form-control" value="taimanchan@hksi.com" required="required">
+									<input type="email" id="Email" name="Email" class="form-control" value="" required="required">
 									<span class="indicator"></span>
 								</div>
 								<div class="form-group additional">Add Office and Secretary Email Address</div>

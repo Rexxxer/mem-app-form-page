@@ -23,6 +23,7 @@ function updateformvalue(meminfo){
 	$("input[name=GivenName]").val(meminfo.givenName);
 	$("input[name=SurnameChi]").val(meminfo.chineseSurname);
 	$("input[name=GivenNameChi]").val(meminfo.chineseGivenName);
+	$("input[name=PreferedName]").val(meminfo.preferredName);
 	$("select[name=Sex]").val(meminfo.sex);
 	$("input[name=Dob]").val(meminfo.dateOfBirth);
 	$("input[name=HKID]").val(meminfo.hkid);
@@ -32,6 +33,10 @@ function updateformvalue(meminfo){
 	$("input[name=Phone]").val(meminfo.preferredPhone);
 	$("input[name=OfficeTel]").val(meminfo.businessPhone);
 	$("input[name=SecretaryPhone]").val(meminfo.businessPhone);
+	$("input[name=Address1]").val(meminfo.residentialAddress1);
+	$("input[name=Address2]").val(meminfo.residentialAddress2);
+	$("input[name=Address3]").val(meminfo.residentialAddress3);
+	$("input[name=Address4]").val(meminfo.residentialAddress4);
 	console.log(meminfo.surname);
 }
 
